@@ -1,4 +1,4 @@
-@include('admin.sidebar')
+@include('frontend.admin.sidebar')
 @if (request()->has('success'))
     <div class="alert alert-success">
         {{ request()->get('success') }}
@@ -12,7 +12,7 @@
 @endif
 
 <section class="home-section">
-    @include('admin.navbar')
+    @include('frontend.admin.navbar')
     <div class="home-content">
         <div class="container mt-4">
         @if(session('message'))

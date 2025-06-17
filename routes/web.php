@@ -56,6 +56,7 @@ Route::post('/admin/updateProduct', [AdminController::class, 'updateProduct'])->
 
 // Category Routes
 Route::get('/admin/category', [AdminController::class, 'viewCategory'])->name('admin.category');
+Route::get('/admin/all-category', [AdminController::class, 'showAllCategory'])->name('admin.allcategory');
 Route::post('/admin/category', [AdminController::class, 'addCategory'])->name('admin.addcategory');
 Route::get('/admin/showAllcategory', [AdminController::class, 'allcategory'])->name('admin.showallcategory');
 Route::get('/admin/deletecategory/{id}', [AdminController::class, 'deleteCategory'])->name('admin.deleteCategory');
@@ -66,7 +67,7 @@ Route::post('/admin/updateShowCategory', [AdminController::class, 'updateCategor
 Route::get('/admin/subcategory', [AdminController::class, 'viewSubCategory'])->name('admin.subcategory');
 Route::post('/admin/subcategory', [AdminController::class, 'addSubCategory'])->name('admin.addSubCategory');
 Route::get('/admin/showSubCategory', [AdminController::class, 'showSubCategory'])->name('admin.showAllSubCategory');
-
+Route::get('/admin/get-subcategories/{categoryId}', [AdminController::class, 'getSubcategories']);
 Route::get('/admin/deletesubcategory/{id}', [AdminController::class, 'deleteSubCategory'])->name('admin.deleteSubCategory');
 Route::get('/admin/updatesubcategory/{id}', [AdminController::class, 'updateShowSubCategory'])->name('admin.updateShowSubCategory');
 Route::post('/admin/updatesubcategory', [AdminController::class, 'updateSubCategory'])->name('admin.updateSubCategory');

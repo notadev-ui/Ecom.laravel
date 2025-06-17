@@ -10,7 +10,7 @@ class CreateProductTable extends Migration
         Schema::create('product', function (Blueprint $table) {
             $table->bigIncrements('productId');
             $table->unsignedBigInteger('categoryId')->nullable();
-            $table->unsignedBigInteger('subCategoryId')->nullable();
+            $table->unsignedBigInteger('subcategoryId')->nullable();
             $table->string('productName');
             $table->decimal('productPrice', 10, 2)->nullable();
             $table->decimal('productSalePrice', 10, 2)->nullable();

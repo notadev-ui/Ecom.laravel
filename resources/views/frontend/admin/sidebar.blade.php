@@ -590,7 +590,20 @@
             </a>
         </li>
        
-
+       <!-- for subcategory -->
+        <li>
+            <a href="{{ route('admin.subcategory') }}">
+                <i class='bx bx-category'></i>
+                <span class="links_name">Add Sub Category</span>
+            </a>  
+        </li>
+        <li>
+            <a href="{{ route('admin.showAllSubCategory') }}">
+                <i class='bx bx-list  -ul'></i>
+                <span class="links_name ">Show Sub Category</span>
+            </a>
+        </li>
+        
         
         <li class="log_out">
             <a href="/back-pannel/logout.php">

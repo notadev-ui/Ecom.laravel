@@ -33,7 +33,7 @@
 </style>
 
 <div class="container">
-<!--    <div class="card mt-4">-->
+   <!-- <div class="card mt-4">-->
 
 <!--        <div class="card-body">-->
 <!--<h2 class="card-title fw-600" style="color:black; font-weight: 600;">{{ strtoupper($product->productName) }}</h2>-->
@@ -42,7 +42,7 @@
             
             <!-- Add more product details here as needed -->
 <!--        </div>-->
-<!--    </div>-->
+<!--    </div> -->
     
 <div class="row mt-5 mb-3">
     @if (session('success'))

@@ -1,7 +1,7 @@
-@include('admin.sidebar')
+@include('frontend.admin.sidebar')
 
 <section class="home-section">
-@include('admin.navbar')
+@include('frontend.admin.navbar')
     <div class="home-content">
         <div class="container mt-4">
 
@@ -17,17 +17,19 @@
                         <tr>
                             <th>ID</th>
                             <th>Sub Category Name</th>
+                            <th>Category Name </th>
                             <th>Update</th>
                             <th>Delete</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($subCategory as $data)
+                        @foreach ($subcategory as $data)
                         <tr>
-                            <td>{{ $data->subCategoryId   }}</td>
-                            <td>{{ $data->subCategoryName }}</td>
-                            <td><a href="{{ route('admin.deleteSubCategory', ['id' => $data->subCategoryId]) }}" class="btn btn-danger btn-sm">Delete</a></td>
-                            <td><a href="{{ route('admin.updateShowSubCategory', ['id' => $data->subCategoryId]) }}" class="btn btn-primary btn-sm">Update</a></td>
+                            <td>{{ $data->subcategoryId   }}</td>
+                            <td>{{ $data->subcategoryName }}</td>
+                            <td>{{ $data->category->categoryName ?? 'N/A' }}</td>
+                            <td><a href="{{ route('admin.updateShowSubCategory', ['id' => $data->subcategoryId]) }}" class="btn btn-primary btn-sm">Update</a></td>
+                            <td><a href="{{ route('admin.deleteSubCategory', ['id' => $data->subcategoryId]) }}" class="btn btn-danger btn-sm">Delete</a></td>
                         </tr>
                         @endforeach
                     </tbody>

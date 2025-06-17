@@ -1,5 +1,5 @@
 <?php
-declare(strict_types=1);
+
 
 namespace App\Http\Controllers\Frontend;
 namespace App\Http\Controllers\Frontend;
@@ -13,7 +13,8 @@ use Illuminate\Support\Facades\Storage;
 use App\Models\Blog; // Import the Blog model
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
-use Illuminate\Support\Facades\Validator;   
+use Illuminate\Support\Facades\Validator;  
+use App\Models\Subcategory; 
 
 
 class AdminController extends Controller
@@ -94,19 +95,19 @@ class AdminController extends Controller
         }
     }
 
-    public function viewSubCategory()
+    public function viewsubcategory()
     {
         $categories = DB::table('category')->get();
-        return view('frontend.admin.addSubCategory', compact('categories'));
+        return view('frontend.admin.addsubcategory', compact('categories'));
     }
 
-    public function addSubCategory(Request $request)
+    public function addsubcategory(Request $request)
     {
         $categoryId = $request->input('categoryId');
         $subcategoryName = $request->input('subcategoryName');
-        $inserted = DB::table('subCategory')->insert([
+        $inserted = DB::table('subcategory')->insert([
             'categoryId' => $categoryId,
-            'subCategoryName' => $subcategoryName,
+            'subcategoryName' => $subcategoryName,
         ]);
 
         if ($inserted) {
@@ -119,7 +120,8 @@ class AdminController extends Controller
     public function viewproduct()
     {
         $categories = DB::table('category')->get();
-        return view('frontend.admin.addProduct', compact('categories'));
+        $subcategories = Subcategory::all();
+        return view('frontend.admin.addProduct', compact('categories', 'subcategories'));
     }
 
     public function addproduct(Request $request)
@@ -138,7 +140,7 @@ class AdminController extends Controller
 
             DB::table('product')->insert([
                 'categoryId' => $request->input('categoryId'),
-                'subCategoryId' => $request->input('SubCategoryId'),
+                'subcategoryId' => $request->input('subcategoryId'),
                 'productName' => $request->input('productName'),
                 'productPrice' => $request->input('productPrice'),
                 'productSalePrice' => $request->input('productSalePrice'),
@@ -239,7 +241,7 @@ class AdminController extends Controller
 
         DB::table('product')->where('productId', $id)->update([
             'categoryId' => $request->input('categoryId'),
-            'subCategoryId' => $request->input('SubCategoryId'),
+            'subcategoryId' => $request->input('subcategoryId'),
             'productName' => $request->productName,
             'productPrice' => $request->productPrice,
             'productSalePrice' => $request->productSalePrice,
@@ -257,10 +259,13 @@ class AdminController extends Controller
     }
 
     
-    public function getSubcategories($categoryId){
-    $subcategories = \App\Models\SubCategory::where('categoryId', $categoryId)->get();
-    return response()->json($subcategories);
-}
+    public function getSubcategories($categoryId)
+    {
+        $subcategories = \App\Models\Subcategory::where('categoryId', $categoryId)->get();
+        return response()->json($subcategories);
+    }
+    
+
 
     public function allcategory()
     {
@@ -301,56 +306,49 @@ class AdminController extends Controller
 
     public function showSubCategory()
     {
-        $SubCategory = DB::table('SubCategory')->get();
-        return view('frontend.admin.showAllSubCategory', compact('SubCategory'));
-        
-    }
-    public function allSubCategory(){
-        $SubCategory = SubCategory::with('category')->get();
-        return view('admin.subcategoryList', compact('SubCategory'));
-    }
-    
-
-    public function deleteSubCategory($id)
-    {
-        $affectedRows = DB::table('SubCategory')->where('SubCategoryId', $id)->delete();
-        if ($affectedRows > 0) {
-            return redirect()->route('admin.showAllSubCategory')->with('message', 'Sub Category deleted successfully.');
-        } else {
-            return redirect()->route('admin.showAllSubCategory')->with('message', 'Sub Category not found or deletion failed.');
-        }
+         $subcategory = Subcategory::with('category')->get(); // Eager load category
+        return view('frontend.admin.showAllSubCategory', compact('subcategory'));
     }
 
-    public function updateShowSubCategory($id)
-    {
-        $Data = DB::table('SubCategory')
-            ->join('category', 'SubCategory.categoryId', '=', 'category.categoryId')
-            ->select('SubCategory.*', 'category.categoryName', 'subCategory.subCategoryName', 'category.categoryId', 'subCategory.subCategoryId')
-            ->where('SubCategory.SubCategoryId', $id)
-            ->first();
+public function deleteSubCategory($id)
+{
+    $deleted = Subcategory::where('subcategoryId', $id)->delete();
 
-        if (!$Data) {
-            abort(404, 'Sub Category not found');
-        }
+    if ($deleted) {
+        return redirect()->route('admin.showAllSubCategory')->with('message', 'Sub Category deleted successfully.');
+    } else {
+        return redirect()->route('admin.showAllSubCategory')->with('message', 'Sub Category not found or deletion failed.');
+    }
+}
 
-        $categories = DB::table('category')->get();
-        return view('frontend.admin.updateShowSubCategory', compact('Data', 'categories'));
+public function updateShowSubCategory($id)
+{
+    $Data = Subcategory::with('category')->find($id);
+
+    if (!$Data) {
+        abort(404, 'Sub Category not found');
     }
 
-    public function updateSubCategory(Request $request)
-    {
-        $subCategoryName = $request->input('SubCategoryName');
-        $SubCategoryId = $request->input('SubCategoryId');
-        $categoryId = $request->input('categoryId');
+    $categories = Category::all();
 
-        DB::table('SubCategory')->where('SubCategoryId', $SubCategoryId)->update([
-            'categoryId' => $categoryId,
-            'SubCategoryName' => $SubCategoryName,
-        ]);
+    return view('frontend.admin.updateShowSubCategory', compact('Data', 'categories'));
+}
 
-        return redirect()->route('admin.showSubCategory')->with('message', 'Sub Category updated successfully');
+public function updateSubCategory(Request $request)
+{
+    $request->validate([
+        'subcategoryName' => 'required|string|max:255',
+        'subcategoryId' => 'required|exists:subcategory,subcategoryId',
+        'categoryId' => 'required|exists:category,categoryId',
+    ]);
+
+    Subcategory::where('subcategoryId', $request->subcategoryId)->update([
+        'subcategoryName' => $request->subcategoryName,
+        'categoryId' => $request->categoryId,
+    ]);
+
+    return redirect()->route('admin.showAllSubCategory')->with('message', 'Sub Category updated successfully');
     }
-
     public function viewBlog()
     {
         $blogs = Blog::all();
