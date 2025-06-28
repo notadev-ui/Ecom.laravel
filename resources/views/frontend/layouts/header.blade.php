@@ -52,7 +52,7 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background:#fffdf5!important;">
         <div class="container-fluid">
-            <a class="navbar-brand" href="{{ url('/') }}"><img src="{{ url('frontend/img/Logo.png') }}" alt="Ecom24x7" style="width:133px;"></a>
+            <a class="navbar-brand" href="{{ url('/') }}"><img src="{{ url('frontend/img/logo (2).png') }}" alt="Ecom24x7" style="width:133px;"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -74,13 +74,6 @@
                         <a class="nav-link site-nav__link site-nav__link--underline" href="{{ url('/contact') }}">Contact Us</a>
                     </li>
                 </ul>
-<!--    <form class="d-flex" id="search-form">-->
-<!--    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="search-input">-->
-<!--    <button type="button" id="search-previous" style="display: none;">Up Arrow</button>-->
-<!--    <button type="button" id="search-next" style="display: none;">Down Arrow</button>-->
-<!--</form>-->
-<!--<p id="search-count"></p>-->
-<!--<div id="search-results"></div>-->
 
 <form class="d-flex" id="search-form" action="{{ route('search') }}" method="GET">
     <!--@csrf-->
@@ -195,40 +188,8 @@
         const searchCount = document.getElementById('search-count');
 
         searchForm.addEventListener('submit', function(event) {
-            event.preventDefault();
-            const query = searchInput.value.trim();
-
-            if (query) {
-                fetch(`/search?query=${encodeURIComponent(query)}`)
-                    .then(response => response.json())
-                    .then(data => {
-                        displayResults(data);
-                    })
-                    .catch(error => {
-                        console.error('Error fetching search results:', error);
-                    });
-            } else {
-                searchResults.innerHTML = '';
-                searchCount.textContent = '';
-            }
-        });
-
-        function displayResults(data) {
-            searchResults.innerHTML = '';
-            if (data.length > 0) {
-                data.forEach(item => {
-                    const resultItem = document.createElement('div');
-                    resultItem.className = 'result-item';
-                    resultItem.innerHTML = `<h3>${item.name}</h3><p>${item.description}</p>`;
-                    searchResults.appendChild(resultItem);
-                });
-                searchCount.textContent = `${data.length} results found`;
-            } else {
-                searchCount.textContent = 'No results found';
-            }
-        }
-    });
-    // Show all announcements in a slider fashion
+<script>
+// Show all announcements in a slider fashion
 document.addEventListener('DOMContentLoaded', function () {
     const slider = document.querySelector('.announcement-slider');
     if (!slider) return;
@@ -248,9 +209,3 @@ document.addEventListener('DOMContentLoaded', function () {
     }, 3000); // Change slide every 3 seconds
 });
 </script>
-
-    <!-- Include Bootstrap JS and dependencies -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-    <script src="{{ asset('assets/dashboard/js/main.js') }}"></script>
