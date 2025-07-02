@@ -406,7 +406,7 @@ Improve Your Style Ethically with Ecom24x7's Handcrafted Jewelry</div>
             <div class="col-md-6 section-column">
                 <a class="hover-opacity" href="#">
                     <!--<img class="img-fluid" src="https://caketheme.com/html/mojuri/media/banner/intro-1.jpg" alt="Product Image">-->
-                    <img class="img-fluid" src="images/Ecom24x7 2.webp" alt="Product Image">
+                    <img class="img-fluid" src="images/shopkart24 2.webp" alt="Product Image">
                 </a>
             </div>
         </div>
@@ -566,7 +566,7 @@ Improve Your Style Ethically with Ecom24x7's Handcrafted Jewelry</div>
                                 <div class="banner-wrapper banners">
                                     <div class="banner-image">
                                         <a href="shop-grid-left.html">
-                                            <img src="/assets/dashboard/img/banner-1-2.jpg" alt="Banner Image">
+                                            <img src="https://caketheme.com/html/mojuri/media/banner/banner-1-1.jpg" alt="Banner Image">
                                         </a>
                                     </div>
                                     <div class="banner-wrapper-infor text-center">

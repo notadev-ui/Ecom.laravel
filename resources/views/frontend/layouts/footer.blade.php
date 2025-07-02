@@ -14,7 +14,7 @@
 											<div class="block-content">
 												<ul style="list-style: none;display: inline-block;">
 													<li>
-														<i class="fa-sharp fa-solid fa-location-dot pr-2 text-center"></i><span></span> B-49, Vishwakarma Colony, <br><p class="" style="margin-left: 27px;">New Delhi-110044</p>
+														<i class="fa-sharp fa-solid fa-location-dot pr-2 text-center"></i><span></span> B-49, Nehru Place, <br><p class="" style="margin-left: 27px;">New Delhi-110044</p>
 													</li>
 													<li>
 												     	<a href="tel:9999950946">

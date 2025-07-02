@@ -74,6 +74,13 @@
                         <a class="nav-link site-nav__link site-nav__link--underline" href="{{ url('/contact') }}">Contact Us</a>
                     </li>
                 </ul>
+                
+   <form class="d-flex" id="search-form">
+   <button type="button" id="search-previous" style="display: none;">Up Arrow</button>
+   <button type="button" id="search-next" style="display: none;">Down Arrow</button>
+</form>
+<p id="search-count"></p>
+<div id="search-results"></div>
 
 <form class="d-flex" id="search-form" action="{{ route('search') }}" method="GET">
     <!--@csrf-->
@@ -188,24 +195,79 @@
         const searchCount = document.getElementById('search-count');
 
         searchForm.addEventListener('submit', function(event) {
-<script>
-// Show all announcements in a slider fashion
-document.addEventListener('DOMContentLoaded', function () {
-    const slider = document.querySelector('.announcement-slider');
-    if (!slider) return;
+            event.preventDefault();
+            const query = searchInput.value.trim();
 
-    const slides = slider.children;
-    let current = 0;
+            if (query) {
+                fetch(`/search?query=${encodeURIComponent(query)}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        displayResults(data);
+                    })
+                    .catch(error => {
+                        console.error('Error fetching search results:', error);
+                    });
+            } else {
+                searchResults.innerHTML = '';
+                searchCount.textContent = '';
+            }
+        });
 
-    // Hide all slides except the first
-    for (let i = 0; i < slides.length; i++) {
-        slides[i].style.display = i === 0 ? 'block' : 'none';
+        function displayResults(data) {
+            searchResults.innerHTML = '';
+            if (data.length > 0) {
+                data.forEach(item => {
+                    const resultItem = document.createElement('div');
+                    resultItem.className = 'result-item';
+                    resultItem.innerHTML = `<h3>${item.name}</h3><p>${item.description}</p>`;
+                    searchResults.appendChild(resultItem);
+                });
+                searchCount.textContent = `${data.length} results found`;
+            } else {
+                searchCount.textContent = 'No results found';
+            }
+        }
+    });
+    // Show all announcements in a slider fashion
+
+    function showAnnouncements() {
+        const slider = document.getElementById('AnnouncementSlider');
+        const slides = slider.querySelectorAll('.announcement-slider__slide');
+        let currentIndex = 0;
+        const totalSlides = slides.length;
+        let intervalId;
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.style.display = (i === index) ? 'block' : 'none';
+            });
+        }
+
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % totalSlides;
+            showSlide(currentIndex);
+        }
+
+        // Initial display
+        showSlide(currentIndex);
+
+        // Start interval
+        intervalId = setInterval(nextSlide, 3000);
+
+        // Optional: Pause on hover
+        slider.addEventListener('mouseenter', () => clearInterval(intervalId));
+        slider.addEventListener('mouseleave', () => {
+            intervalId = setInterval(nextSlide, 3000);
+        });
     }
 
-    setInterval(() => {
-        slides[current].style.display = 'none';
-        current = (current + 1) % slides.length;
-        slides[current].style.display = 'block';
-    }, 3000); // Change slide every 3 seconds
-});
+    showAnnouncements();
 </script>
+
+
+
+    <!-- Include Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="{{ asset('assets/dashboard/js/main.js') }}"></script>

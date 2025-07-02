@@ -49,20 +49,20 @@ public function index()
         }
 
         // Update the session with the merged cart data
-        Session::put('cart', $cart);
+        // Session::put('cart', $cart);
 
-        $api = new Api(env('RAZORPAY_KEY'), env('RAZORPAY_SECRET'));
-        $amount = $this->getOrderAmount($userId); // Implement this method to get the actual order amount
+        // $api = new Api(env('RAZORPAY_KEY'), env('RAZORPAY_SECRET'));
+        // $amount = $this->getOrderAmount($userId); // Implement this method to get the actual order amount
 
-        if ($amount == 0) {
-            $amount = 100;
-        }
+        // if ($amount == 0) {
+        //     $amount = 100;
+        // }
 
-        $order = $api->order->create([
-            'receipt' => 'order_' . $userId . '_' . time(),
-            'amount' => $amount, // amount in paisa
-            'currency' => 'INR'
-        ]);
+        // $order = $api->order->create([
+        //     'receipt' => 'order_' . $userId . '_' . time(),
+        //     'amount' => $amount, // amount in paisa
+        //     'currency' => 'INR'
+        // ]);
     }
 
     return view('frontend.cart', compact('addresses', 'cart', 'order', 'amount'));
