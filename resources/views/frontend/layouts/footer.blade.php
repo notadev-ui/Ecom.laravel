@@ -31,10 +31,10 @@
 
 										<div class="block ">
 											<ul class="social-link" style="list-style: none;display: inline-block;">
-											<li style=" width: 33px;"><a href="https://twitter.com/Ecom24x7"><i class="fa-brands fa-twitter"></i></a></li>
-											<li style=" width: 33px;"><a href="https://www.instagram.com/shopkartt24/"><i class="fa-brands fa-instagram"></i></i></a></li>
-											<li style=" width: 33px;"><a href="https://www.facebook.com/Ecom24x7/"><i class="fa-brands fa-facebook"></i></i></a></li>
-											<li style=" width: 33px;"><a href="https://www.youtube.com/channel/UCd-8OwHsCJkgYsKogxEODkw"><i class="fa-brands fa-youtube"></i></a></li>
+											<li style=" width: 33px;"><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+											<li style=" width: 33px;"><a href="#"><i class="fa-brands fa-instagram"></i></i></a></li>
+											<li style=" width: 33px;"><a href="#"><i class="fa-brands fa-facebook"></i></i></a></li>
+											<li style=" width: 33px;"><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
 											</ul>
 										</div>
 									</div>
@@ -78,7 +78,7 @@
 											<div class="block-content">
 												<ul>
 													<li>
-														<a href="{{ ('/about') }}">About Us</a>
+														<a href="{{ url('/about') }}">About Us</a>
 													</li>
 													<li>
 														<a href="{{ url('/contact') }}">Contact Us</a>

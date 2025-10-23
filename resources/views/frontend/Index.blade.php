@@ -43,7 +43,7 @@
   .block-title h2{
     text-transform: uppercase!important;
     font-size: .3125in;
-    color: #000;
+    color: #116315ff;
     line-height: 1.2;
     font-weight: 500;
     text-align: center;
@@ -121,7 +121,13 @@ font-size: 24px;
 .star-4{
     color: #fcad02;
 }
-
+.title-banner{
+    font-size: 26px;
+    color: #26ac47ff ;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
 
 
 @media (max-width: 767px) {
@@ -195,11 +201,101 @@ font-size: 24px;
     </div>
     <main class="main-content" id="MainContent">
 
+<!-- SLIDER: two banners, mouse left/right drag, no text, no links, images 100% and content-fit -->
+<section class="simple-slider-section mb-4">
+    <div class="simple-slider" id="simpleSlider" aria-roledescription="carousel" aria-label="Promotional banners">
+        <div class="slider-track" id="sliderTrack">
+            <div class="slide">
+                <img src="{{ asset('images/Banner 1.png') }}" alt="" draggable="false">
+            </div>
+            <div class="slide">
+                <img src="{{ asset('images/Ecom24x7Banner1.png') }}" alt="" draggable="false">
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .simple-slider { width: 100%; overflow: hidden; position: relative; }
+        .slider-track { display: flex; transition: transform 300ms ease; will-change: transform; }
+        .slide { flex: 0 0 100%; display: block; user-select: none; -webkit-user-drag: none; }
+        .slide img {
+            width: 100%;
+            height: 500px;            /* adjust height as needed */
+            object-fit: cover;        /* content fit */
+            display: block;
+            pointer-events: none;     /* prevent default image interactions */
+        }
+
+        /* Responsive height */
+        @media (max-width: 768px) {
+            .slide img { height: 260px; }
+        }
+
+        /* ensure no custom cursor is applied */
+        </style>
+        <script>
+        (function(){
+            var track = document.getElementById('sliderTrack');
+            if(!track) return;
+            var slides = track.querySelectorAll('.slide');
+            var total = slides.length;
+            var index = 0;
+            var intervalMs = 3000; // change every 4 seconds
+            var timer;
+
+            function goTo(i){
+                index = (i + total) % total;
+                track.style.transform = 'translateX(' + (-index * 100) + '%)';
+            }
+            function next(){
+                goTo(index + 1);
+            }
+            function start(){
+                stop();
+                timer = setInterval(next, intervalMs);
+            }
+            function stop(){
+                if(timer) { clearInterval(timer); timer = null; }
+            }
+
+            // start auto-rotation
+            start();
+
+            // pause on hover / focus for better UX
+            var slider = document.getElementById('simpleSlider');
+            if(slider){
+                slider.addEventListener('mouseenter', stop);
+                slider.addEventListener('mouseleave', start);
+                slider.addEventListener('focusin', stop);
+                slider.addEventListener('focusout', start);
+            }
+
+            // optional: keyboard navigation when slider focused
+            document.addEventListener('keydown', function(e){
+                if(!slider || document.activeElement !== slider) return;
+                if(e.key === 'ArrowRight'){ stop(); next(); start(); }
+                if(e.key === 'ArrowLeft'){ stop(); goTo(index - 1); start(); }
+            });
+
+            // keep transform consistent on resize
+            window.addEventListener('resize', function(){ goTo(index); });
+        })();
+        </script>
+        <style>
+        .simple-slider, .slider-track, .slide, .slide img { cursor: auto; }
+        
+    </style>
+
+    
+    
+</section>
+    
     @if (session('success'))
         <div class="alert alert-success">
             {{ session('success') }}
         </div>
     @endif
+    
         <!-- BEGIN content_for_index -->
         
         <section class="section" style="margin-bottom: 2px !important; background: white;">
@@ -357,7 +453,7 @@ font-size: 24px;
         <div class="row">
             <div class="col-md-6 section-column">
                 <div class="intro-wrap"style="padding-top:38px!important;">
-                    <h2 style="color: #ec688d;">Why Choose Us?</h2>
+                    <h2 style="color: #ec688d;">Why Choose Ecom24x7?</h2>
                     <h3 class="title"></h3>
                      <div class="text mb-4">Crafted with Care, Sourced with Integrity
 Improve Your Style Ethically with Ecom24x7's Handcrafted Jewelry</div>
@@ -545,7 +641,7 @@ Improve Your Style Ethically with Ecom24x7's Handcrafted Jewelry</div>
                                 <div class="banner-wrapper banners">
                                     <div class="banner-image">
                                         <a href="shop-grid-left.html">
-                                            <img src="https://caketheme.com/html/mojuri/media/banner/banner-1-1.jpg" alt="Banner Image">
+                                            <img src="images/shopkart24 4.webp" alt="Banner Image">
                                         </a>
                                     </div>
                                     <div class="banner-wrapper-infor">
@@ -566,13 +662,13 @@ Improve Your Style Ethically with Ecom24x7's Handcrafted Jewelry</div>
                                 <div class="banner-wrapper banners">
                                     <div class="banner-image">
                                         <a href="shop-grid-left.html">
-                                            <img src="https://caketheme.com/html/mojuri/media/banner/banner-1-1.jpg" alt="Banner Image">
+                                            <img src="images/shopkart. 24 5.webp" alt="Banner Image">
                                         </a>
                                     </div>
                                     <div class="banner-wrapper-infor text-center">
                                         <div class="info">
                                             <div class="content">
-                                                <h3 class="title-banner"></h3>
+                                                <h3 class="title-banner">Trending Products</h3>
                                                 <a class="button" href="">Shop Now</a>						
                                             </div>
                                         </div>
@@ -587,7 +683,7 @@ Improve Your Style Ethically with Ecom24x7's Handcrafted Jewelry</div>
                                 <div class="banner-wrapper banners">
                                     <div class="banner-image">
                                         <a href="shop-grid-left.html">
-                                            <img src="https://caketheme.com/html/mojuri/media/banner/banner-1-3.jpg" alt="Banner Image" style="width:100%;">
+                                            <img src="images/clearnance.webp" alt="Banner Image" style="width:100%;">
                                         </a>
                                     </div>
                                     <div class="banner-wrapper-infor">
@@ -607,70 +703,4 @@ Improve Your Style Ethically with Ecom24x7's Handcrafted Jewelry</div>
         </div>
     </div>
 </section>
-         
-        
-<section class="section " style="background:#f5f5f9; padding-top:50px; padding-bottom:50px;">
-								<div class="section-container">
-									<!-- Block Image -->
-									<!-- <div class="block block-image slider">-->
-<!--										<div class="block-widget-wrap">-->
-<!--											<div class="block block-testimonial layout-2">-->
-<!--										<div class="block-widget-wrap">-->
-											
-<!--										     <div class="multiple-brand"> -->
-							
-<!--								<div class="item">-->
-							
-<!--									<div class="">-->
-<!--										<img width="175" height="175" src="https://caketheme.com/html/mojuri/media/brand/2.jpg" alt="">							-->
-<!--									</div>-->
-<!--								 </div>	-->
-<!--								<div class="item">-->
-							
-<!--									<div class="">-->
-<!--										<img width="175" height="175" src="https://caketheme.com/html/mojuri/media/brand/3.jpg" alt="">							-->
-<!--									</div>-->
-<!--								 </div>	-->
-<!--								<div class="item">-->
-							
-<!--									<div class="">-->
-<!--										<img width="175" height="175" src="https://caketheme.com/html/mojuri/media/brand/4.jpg" alt="">							-->
-<!--									</div>-->
-<!--								 </div>	-->
-<!--								<div class="item">-->
-							
-<!--									<div class="">-->
-<!--										<img width="175" height="175" src="https://caketheme.com/html/mojuri/media/brand/5.jpg" alt="">							-->
-<!--									</div>-->
-<!--								 </div>	-->
-                           
-<!--								<div class="item">-->
-							
-<!--									<div class="">-->
-<!--										<img width="175" height="175" src="https://caketheme.com/html/mojuri/media/brand/1.jpg" alt="">							-->
-<!--									</div>-->
-<!--								 </div>	-->
-                           
-								
-														
-															
-       
-<!--										</div>-->
-<!--									</div>-->
-<!--										</div>-->
-<!--									</div>-->
-<!--								</div>-->
-<!--							</section>   -->
-        
-        <div id="shopify-section-1661622546ec4192af" class="shopify-section">
-    
-            <div id="insta-feed"></div>
-          </div><!-- END content_for_index -->
-        
-        </main>
-        <div id="shopify-section-footer-promotions" class="shopify-section index-section--footer">
-        </div>
-      
-        
-        
-    @endsection
+@endsection
