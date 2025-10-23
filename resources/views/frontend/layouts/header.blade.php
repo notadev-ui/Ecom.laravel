@@ -62,10 +62,10 @@
                         <a class="nav-link active site-nav__link site-nav__link--underline" aria-current="page" href="{{ url('/') }}">Home</a>
                     </li>
                      <li class="nav-item site-nav__item site-nav__expanded-item">
-                    <a class="nav-link site-nav__link site-nav__link--underline" href="{{ ('/about') }}">About Us</a>
+                    <a class="nav-link site-nav__link site-nav__link--underline" href="{{ url('/about') }}">About Us</a>
                     </li> 
                     <li class="nav-item site-nav__item site-nav__expanded-item">
-                        <a class="nav-link site-nav__link site-nav__link--underline" href="{{ url('/jewelry') }}"> Stones</a>
+                        <a class="nav-link site-nav__link site-nav__link--underline" href="{{ url('/jewelry') }}"> Shop Now</a>
                     </li>
                     <li class="nav-item site-nav__item site-nav__expanded-item">
                      <a class="nav-link site-nav__link site-nav__link--underline" href="{{ url('/blog') }}">Blog</a>

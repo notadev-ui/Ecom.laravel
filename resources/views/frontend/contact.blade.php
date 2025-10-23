@@ -27,7 +27,7 @@
             color: #9b006f;
         }
      
-}
+
     </style>
     </div>
     
