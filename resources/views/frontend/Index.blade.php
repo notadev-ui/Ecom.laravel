@@ -206,10 +206,10 @@ font-size: 24px;
     <div class="simple-slider" id="simpleSlider" aria-roledescription="carousel" aria-label="Promotional banners">
         <div class="slider-track" id="sliderTrack">
             <div class="slide">
-                <img src="{{ asset('images/Banner 1.png') }}" alt="" draggable="false">
+                <img src="{{ asset('images/Banner2.png') }}" alt="" draggable="false">
             </div>
             <div class="slide">
-                <img src="{{ asset('images/Ecom24x7Banner1.png') }}" alt="" draggable="false">
+                <img src="{{ asset('images/Banner1.png') }}" alt="" draggable="false">
             </div>
         </div>
     </div>
@@ -220,7 +220,7 @@ font-size: 24px;
         .slide { flex: 0 0 100%; display: block; user-select: none; -webkit-user-drag: none; }
         .slide img {
             width: 100%;
-            height: 500px;            /* adjust height as needed */
+            height: 470px;            /* adjust height as needed */
             object-fit: cover;        /* content fit */
             display: block;
             pointer-events: none;     /* prevent default image interactions */
@@ -234,53 +234,41 @@ font-size: 24px;
         /* ensure no custom cursor is applied */
         </style>
         <script>
-        (function(){
-            var track = document.getElementById('sliderTrack');
-            if(!track) return;
-            var slides = track.querySelectorAll('.slide');
-            var total = slides.length;
-            var index = 0;
-            var intervalMs = 3000; // change every 4 seconds
-            var timer;
+(function(){
+    var track = document.getElementById('sliderTrack');
+    if(!track) return;
+    var slides = track.querySelectorAll('.slide');
+    var total = slides.length;
+    var index = 0;
 
-            function goTo(i){
-                index = (i + total) % total;
-                track.style.transform = 'translateX(' + (-index * 100) + '%)';
-            }
-            function next(){
-                goTo(index + 1);
-            }
-            function start(){
-                stop();
-                timer = setInterval(next, intervalMs);
-            }
-            function stop(){
-                if(timer) { clearInterval(timer); timer = null; }
-            }
+    function goTo(i){
+        index = (i + total) % total;
+        track.style.transform = 'translateX(' + (-index * 100) + '%)';
+    }
 
-            // start auto-rotation
-            start();
+    // detect scroll direction
+    var lastScroll = window.scrollY;
+    window.addEventListener('scroll', function(){
+        var currentScroll = window.scrollY;
+        var diff = currentScroll - lastScroll;
 
-            // pause on hover / focus for better UX
-            var slider = document.getElementById('simpleSlider');
-            if(slider){
-                slider.addEventListener('mouseenter', stop);
-                slider.addEventListener('mouseleave', start);
-                slider.addEventListener('focusin', stop);
-                slider.addEventListener('focusout', start);
-            }
+        // scroll down -> next banner
+        if(diff > 20){ 
+            goTo(index + 1);
+            lastScroll = currentScroll;
+        }
+        // scroll up -> previous banner
+        else if(diff < -20){ 
+            goTo(index - 1);
+            lastScroll = currentScroll;
+        }
+    });
 
-            // optional: keyboard navigation when slider focused
-            document.addEventListener('keydown', function(e){
-                if(!slider || document.activeElement !== slider) return;
-                if(e.key === 'ArrowRight'){ stop(); next(); start(); }
-                if(e.key === 'ArrowLeft'){ stop(); goTo(index - 1); start(); }
-            });
+    // keep position consistent on resize
+    window.addEventListener('resize', function(){ goTo(index); });
+})();
+</script>
 
-            // keep transform consistent on resize
-            window.addEventListener('resize', function(){ goTo(index); });
-        })();
-        </script>
         <style>
         .simple-slider, .slider-track, .slide, .slide img { cursor: auto; }
         
@@ -306,7 +294,7 @@ font-size: 24px;
                 <div class="block-title">
                     <h2 style="padding-top: 67px; padding-bottom: 20px;">Top Categories</h2>
                 </div>
-                <div class="block-content" style="padding-bottom: 60px; margin-left: 47px;">
+                <div class="block-content" style="padding-bottom: 40px; margin-left: 47px;">
                     <div class="autoplay">
                         
                         <div>
@@ -393,14 +381,6 @@ font-size: 24px;
         </div>
     </div>
 </section>
-
-        <section>
-            <!--<div class="row">-->
-                <img src="/assets/dashboard/img/banner_new.png">
-                                <!--<img src="images/Ecom24x7 1.webp">-->
-
-            <!--</div>-->
-        </section>
         
     <div id="shopify-section-1525295772132" class="shopify-section index-section" style="background:white; margin-bottom:50px!important;">
     <div id="CollectionSection-1525295772132" data-section-id="1525295772132" data-section-type="collection-template">
@@ -501,8 +481,7 @@ Improve Your Style Ethically with Ecom24x7's Handcrafted Jewelry</div>
             </div>
             <div class="col-md-6 section-column">
                 <a class="hover-opacity" href="#">
-                    <!--<img class="img-fluid" src="https://caketheme.com/html/mojuri/media/banner/intro-1.jpg" alt="Product Image">-->
-                    <img class="img-fluid" src="images/shopkart24 2.webp" alt="Product Image">
+                    <img class="img-fluid" src="images/whysection.png" alt="Product Image">
                 </a>
             </div>
         </div>
@@ -702,5 +681,110 @@ Improve Your Style Ethically with Ecom24x7's Handcrafted Jewelry</div>
             </div>
         </div>
     </div>
+
+
+<style>
+.faq-section { background:#ffffff; padding:36px 16px; border-top:1px solid #eee; }
+.faq-section .faq-container { max-width:1200px; margin:0 auto; }
+.faq-heading { display:flex; gap:12px; align-items:baseline; justify-content:space-between; margin-bottom:8px; }
+.faq-heading h2 { margin:0; color:#333; font-size:20px; text-transform:uppercase; letter-spacing:0.6px; }
+.faq-sub { color:#6b6b6b; font-size:14px; }
+
+.faq-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:18px; }
+@media (max-width: 992px) { .faq-grid { grid-template-columns:repeat(2,1fr); } }
+@media (max-width: 576px) { .faq-grid { grid-template-columns:1fr; } }
+
+.faq-item { background:#fafafa; border-radius:10px; padding:14px; box-shadow:0 6px 18px rgba(0,0,0,0.03); }
+.faq-item summary { list-style:none; cursor:pointer; font-weight:600; color:#222; display:flex; align-items:center; justify-content:space-between; padding:6px 0; }
+.faq-item summary::-webkit-details-marker { display:none; }
+.faq-item .chev { transition: transform .25s ease; margin-left:12px; color:#666; }
+.faq-item[open] .chev { transform:rotate(180deg); }
+.faq-answer { color:#555; font-size:14px; line-height:1.6; padding-top:8px; }
+
+.faq-meta { margin-top:18px; display:flex; gap:12px; flex-wrap:wrap; align-items:center; color:#777; font-size:13px; }
+.faq-cta a { background:#ec688d; color:#fff; padding:8px 12px; border-radius:8px; text-decoration:none; font-size:13px; }
+</style>
+
+<section class="faq-section" aria-labelledby="faq-heading">
+  <div class="faq-container">
+    <div class="faq-heading">
+      <div>
+        <h2 id="faq-heading">Frequently Asked Questions</h2>
+        <div class="faq-sub">Quick answers about orders, shipping, returns and payments.</div>
+      </div>
+      <div style="margin-left:auto;">
+        <a href="{{ url('/help') }}" style="color:#6b6b6b; text-decoration:underline; font-size:14px;">Visit Help Center</a>
+      </div>
+    </div>
+
+    <div class="faq-grid" role="list">
+      <details class="faq-item" role="listitem">
+        <summary>
+          What are the shipping options and costs?
+          <span class="chev">▾</span>
+        </summary>
+        <div class="faq-answer">
+          Standard shipping: 3–7 business days. Free shipping on orders above ₹999. Express/next-day available at checkout for extra cost.
+        </div>
+      </details>
+
+      <details class="faq-item" role="listitem">
+        <summary>
+          How can I return or exchange an item?
+          <span class="chev">▾</span>
+        </summary>
+        <div class="faq-answer">
+          Returns accepted within 7 days of delivery for eligible items. Start a return from your account or contact support with your order ID.
+        </div>
+      </details>
+
+      <details class="faq-item" role="listitem">
+        <summary>
+          Which payment methods do you accept?
+          <span class="chev">▾</span>
+        </summary>
+        <div class="faq-answer">
+          We accept UPI, cards (Visa/Mastercard), netbanking and popular wallets. All payments are processed securely.
+        </div>
+      </details>
+
+      <details class="faq-item" role="listitem">
+        <summary>
+          How do I track my order?
+          <span class="chev">▾</span>
+        </summary>
+        <div class="faq-answer">
+          Once dispatched you'll receive an email/SMS with tracking details. You can also view order status from "My Orders" in your account.
+        </div>
+      </details>
+
+      <details class="faq-item" role="listitem">
+        <summary>
+          Do you offer gift wrapping or messages?
+          <span class="chev">▾</span>
+        </summary>
+        <div class="faq-answer">
+          Gift wrapping and a custom message option are available at checkout for select products. Charges may apply.
+        </div>
+      </details>
+
+      <details class="faq-item" role="listitem">
+        <summary>
+          Are products authentic and quality checked?
+          <span class="chev">▾</span>
+        </summary>
+        <div class="faq-answer">
+          Yes — all products are quality checked and ethically sourced. Material and care details are listed on each product page.
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-meta">
+      <div>Still have questions?</div>
+      <div class="faq-cta"><a href="{{ url('/contact') }}">Contact Support</a></div>
+      <div style="color:#999;">or call us at <strong>+91-9192......</strong></div>
+    </div>
+  </div>
+</section>
 </section>
 @endsection

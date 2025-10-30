@@ -45,6 +45,8 @@
 
     <!-- Helpers -->
     <script src="{{ asset('assets/dashboard/vendor/js/helpers.js') }}"></script>
+
+    <link rel="icon" type="image/png" href="{{ asset('assets/dashboard/img/favicon/Favicon.png') }}">
 </head>
 
 <body class="no-js">
