@@ -391,12 +391,12 @@ font-size: 24px;
         </div>
     </div>
     
-    <div class="row" style="margin-right: 24px; margin-left: 14px;">
+    <div class="row" style="margin-right: 24px; margin-left: 14px; border:2px solid #f0f0f0; padding:10px; border-radius:12px;">
         @foreach($products as $product)
    <div class="col-12 col-md-3 pro mt-3" style="padding-right:0px!important">
     <div class="card" >
         <div class="image-container">
-            <img src="{{ asset('image/' . $product->firstImage) }}" class="card-img-top img-fluid" alt="{{ $product->productName }}" style="height:275px; ">
+            <img src="{{ asset('image/' . $product->firstImage) }}" class="card-img-top img-fluid" alt="{{ $product->productName }}" style="height:250px; ">
             <form action="{{ route('cart.add') }}" method="POST">
                 @csrf
                 <input type="hidden" name="product_id" value="{{ $product->productId }}">
@@ -406,7 +406,7 @@ font-size: 24px;
             </form>
         </div>
         <div class="card-body">
-            <h6 class="card-title" style="font-size: 0.5rem; margin-bottom: 2px">
+            <h6 class="card-title" style="font-size: 0.5rem; margin-bottom: 2px; border-radius: 12px;">
                 <a href="{{ route('product.view', $product->productId) }}" class="truncate-text" style="font-size: 14px;">{{ $product->productName }}</a>
             </h6>
             <p class="card-text truncate-description" style="margin-bottom:2px; color:black;">{{ $product->productDescription }}</p>
