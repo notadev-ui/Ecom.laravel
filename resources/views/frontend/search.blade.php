@@ -209,7 +209,7 @@ font-size: 24px;
             <p class="card-text truncate-description" style="margin-bottom:2px; color:black;">{{ $product->productDescription }}</p>
             <p class="card-text" style="margin-bottom:2px; height:38px; color:black; margin-top: 15px;"><b style="font-size:20px;">₹{{ $product->productPrice }}</b></p>
            <div class="text-center">
-                <a href="{{ route('product.view', $product->productId) }}" class="btn" > <button style="background: #ec688d; border: 2px solid #ec688d; color: white; width: 106px; font-size:12px; padding-bottom: 2px; padding-top: 2px;">SHOP NOW</button></a>
+                <a href="{{ route('product.view', $product->productId) }}" class="btn" > <button style="background: #a9d3abff; border: 2px solid #a9d3abff; color: white; width: 106px; font-size:12px; padding-bottom: 2px; padding-top: 2px;">SHOP NOW</button></a>
 
            </div>
         </div>

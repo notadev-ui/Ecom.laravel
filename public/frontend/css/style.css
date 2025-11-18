@@ -102,7 +102,7 @@
 
 .st-search-bar input {
     font-family: inherit;
-    border: 1px solid #ec688d;
+    border: 1px solid #a9d3abff;
     ;
     padding-left: 35px !important;
     margin-top: 5px;
@@ -163,7 +163,7 @@
     .st-search-bar input {
         height: 31px !important;
         border-radius: 8px;
-        border: 1px solid #ec688d;
+        border: 1px solid #a9d3abff;
         margin-bottom: 0px;
         background-position-x: 15px !important;
         padding-left: 40px !important;
@@ -212,11 +212,11 @@
 }
 
 #shopify-section-header .h5 a {
-    color: #ec688d;
+    color: #a9d3abff;
 }
 
 #shopify-section-header .mobile-nav .appear-delay-2 a {
-    color: #ec688d;
+    color: #a9d3abff;
 }
 
 #shopify-section-header .mobile-nav .appear-delay-3 a {
@@ -333,7 +333,7 @@
 
 
 .flex-grid__item--ea45e163-2e28-413e-99a6-cf8285108703-advanced-1 .btn {
-    background: #ec688d !important;
+    background: #a9d3abff !important;
     border: none !important;
     color: #000 !important;
 
@@ -369,7 +369,7 @@
 }
 
 #shopify-section-1525295772132 h2 {
-    color: #ec688d;
+    color: #a9d3abff;
 }
 
 .flex-grid--1525912530555 {
@@ -655,7 +655,7 @@
 }
 
 .page-container h1 {
-    color: #ec688d;
+    color: #a9d3abff;
 }
 
 /*==================
@@ -774,7 +774,7 @@ a {
   /*position: absolute;*/
   top: 2rem;
   margin-top: 20px;
-    background: #ec688d63;
+    background: #a9d3abff63;
     color:black;
   width: 100%; }
   
@@ -815,7 +815,7 @@ a {
           transition: .3s all ease;
           border-radius: 30px; }
         .site-navbar .site-navigation .site-menu > li > a:hover > span {
-          background: #ec688d;
+          background: #a9d3abff;
           color: #fff;
           border-radius: 30px;
           display: inline-block; }

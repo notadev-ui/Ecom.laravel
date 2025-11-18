@@ -242,8 +242,8 @@
             <h6 class="card-title"><a href="{{ route('product.view', $product->productId) }}" class="truncate-text">{{ $product->productName }}</a></h6>
                         <p class="card-text truncate-description"style="margin-bottom:2px; color:black!important;">{{ $product->productDescription}}</p>
                         <p class="card-text "style="margin-bottom:2px; height:38px; color:black!important; margin-top: 15px;">₹{{ $product->productPrice}}</p>
-                       <a href="{{ route('product.view', $product->productId) }}" class="btn " style="background: #ec688d;border: 2px solid #ec688d; color: black;
-                         width: 200px;">Shop Now</a>
+                                             <a href="{{ route('product.view', $product->productId) }}" class="btn " style="background: #a9d3abff;border: 2px solid #a9d3abff; color: black;
+                                                 width: 200px;">Shop Now</a>
 
                        <!--<div class="row">-->
                        <!--    <div class="col col-md-6"><a href="#" class="btn btn-primary">Cart</a></div>-->

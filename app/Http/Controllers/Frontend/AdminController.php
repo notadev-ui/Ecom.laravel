@@ -1,8 +1,7 @@
 <?php
 
+namespace App\Http\Controllers\Frontend;
 
-namespace App\Http\Controllers\Frontend;
-namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -10,11 +9,11 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
-use App\Models\Blog; // Import the Blog model
+use App\Models\Blog;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
-use Illuminate\Support\Facades\Validator;  
-use App\Models\Subcategory; 
+use Illuminate\Support\Facades\Validator;
+use App\Models\Subcategory;
 
 
 class AdminController extends Controller
@@ -258,13 +257,12 @@ class AdminController extends Controller
         return response()->json($categories);
     }
 
-    
+
     public function getSubcategories($categoryId)
     {
         $subcategories = \App\Models\Subcategory::where('categoryId', $categoryId)->get();
         return response()->json($subcategories);
     }
-    
 
 
     public function allcategory()

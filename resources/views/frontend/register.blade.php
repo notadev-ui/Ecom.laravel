@@ -2,10 +2,10 @@
 
 @section('main-container')
 
-<style> #shopify-section-header .megamenu {line-height: 1;} #shopify-section-header .megamenu a {font-size: 0.9em;} #shopify-section-header .site-nav__dropdown-link--second-level {font-size: 0.9em;} #shopify-section-header .h5 a {color: #ec688d;} #shopify-section-header .mobile-nav .appear-delay-2 a {color: #ec688d;} #shopify-section-header .mobile-nav .appear-delay-3 a {color: #9b006f;} </style></div><main class="main-content" id="MainContent">
+<style> #shopify-section-header .megamenu {line-height: 1;} #shopify-section-header .megamenu a {font-size: 0.9em;} #shopify-section-header .site-nav__dropdown-link--second-level {font-size: 0.9em;} #shopify-section-header .h5 a {color: #a9d3abff;} #shopify-section-header .mobile-nav .appear-delay-2 a {color: #a9d3abff;} #shopify-section-header .mobile-nav .appear-delay-3 a {color: #9b006f;} </style></div><main class="main-content" id="MainContent">
     <div class="page-width page-width--tiny page-content">
 <header class="section-header">
-<h1 class="section-header__title text-center " style="color: #ec688d!important;">Register</h1>
+<h1 class="section-header__title text-center " style="color: #a9d3abff!important;">Register</h1>
 </header>
 
 
@@ -38,8 +38,8 @@
 
         
 
-  <button type="submit" class="btn btn--full" style="background: #ec688d;
-    color: white; margin-top: 20px;">
+    <button type="submit" class="btn btn--full" style="background: #a9d3abff;
+        color: white; margin-top: 20px;">
 Register  </button>
 </p>
 <p><a href="{{route('user.login')}}" id="customer_register_link" class="text-center mb-3 pb-3" style="margin-left: 84px;">Already have an  account</a></p><input type="hidden" name="return_url" value="/account" /></form></div>

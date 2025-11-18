@@ -24,7 +24,7 @@
     border: 1px solid var(--tb-border-color);
 }
 .buycartbtn{
-    background: #ec688d;
+    background: #a9d3abff;
     border-radius: 5px;
     padding: 10px;
     width: 150px;
@@ -65,7 +65,7 @@
     </div>
 
     <div class="col col-md-7 col-lg-7 col-xl-7 col-12">
-        <h2 class="card-title fw-600" style="color: #ec688d; font-weight: 600;">{{ strtoupper($product->productName) }}</h2>
+        <h2 class="card-title fw-600" style="color: #a9d3abff; font-weight: 600;">{{ strtoupper($product->productName) }}</h2>
         <p class="card-text" style="color:black; font-size: x-large;">Price: ₹{{ $product->productPrice }}</p>
         <p class="card-text" style="color:black; font-size: x-large;">Sale Price: ₹{{ $product->productSalePrice }}</p>
         <p class="card-text" style="color:black;">{{ $product->productDescription }}</p>

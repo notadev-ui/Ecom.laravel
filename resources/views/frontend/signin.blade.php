@@ -2,7 +2,7 @@
 
 @section('main-container')
 
-<style> #shopify-section-header .megamenu {line-height: 1;} #shopify-section-header .megamenu a {font-size: 0.9em;} #shopify-section-header .site-nav__dropdown-link--second-level {font-size: 0.9em;} #shopify-section-header .h5 a {color: #ec688d;} #shopify-section-header .mobile-nav .appear-delay-2 a {color: #ec688d;} #shopify-section-header .mobile-nav .appear-delay-3 a {color: #9b006f;} </style></div><main class="main-content" id="MainContent">
+<style> #shopify-section-header .megamenu {line-height: 1;} #shopify-section-header .megamenu a {font-size: 0.9em;} #shopify-section-header .site-nav__dropdown-link--second-level {font-size: 0.9em;} #shopify-section-header .h5 a {color: #a9d3abff;} #shopify-section-header .mobile-nav .appear-delay-2 a {color: #a9d3abff;} #shopify-section-header .mobile-nav .appear-delay-3 a {color: #9b006f;} </style></div><main class="main-content" id="MainContent">
     <div class="page-width page-width--tiny page-content">
         <style> 
 .section-header__title h1
@@ -11,11 +11,11 @@ text-transform: uppercase!important;
 }
 .page-container h1 
 {
-color: #ec688d!important;
+color: #a9d3abff!important;
 } 
 </style>
 <header class="section-header">
-<h1 class="section-header__title text-center" style="color:#ec688d;">Login</h1>
+<h1 class="section-header__title text-center" style="color:#a9d3abff;">Login</h1>
 </header>
 @if (session('success'))
         <div class="alert alert-success">
@@ -28,7 +28,7 @@ color: #ec688d!important;
         </div>
     @endif
 <div class="note note--success hide" id="ResetSuccess">
-We&#39;ve sent you an email with a link to update your password.
+We&#39;we sent you an email with a link to update your password.
 </div>
 <form method="POST" action="{{ route('store.login') }}">
 @csrf
@@ -54,7 +54,7 @@ We&#39;ve sent you an email with a link to update your password.
         <div>{{ $message }}</div>
     @enderror
 
-  <button type="submit" class="btn btn--full mt-4" style="background: #ec688d;
+  <button type="submit" class="btn btn--full mt-4" style="background: #a9d3abff;
     color: white;">
     Sign In
   </button>

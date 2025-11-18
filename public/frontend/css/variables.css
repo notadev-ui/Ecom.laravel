@@ -1,0 +1,194 @@
+/* ============================================
+   ECOM24X7 - CSS VARIABLES & THEME CONFIG
+   ============================================ */
+
+:root {
+  /* ---- PRIMARY BRAND COLORS ---- */
+  --primary-brand: #a9d3abff;           /* Sage green - main brand color */
+  --primary-dark: #116315ff;             /* Dark green - alternative (deprecated) */
+  --secondary-accent: #9b006f;           /* Purple - accent color */
+  --tertiary-accent: #977935;            /* Brown - legacy color */
+
+  /* ---- NEUTRAL COLORS ---- */
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-gray-light: #f5f5f5;
+  --color-gray-medium: #999999;
+  --color-gray-dark: #3c3c3c;
+  --color-border: #dddddd;
+
+  /* ---- BACKGROUND COLORS ---- */
+  --bg-page: #ffffff;
+  --bg-section: #fffdf5;
+  --bg-hover: #f9f9f9;
+
+  /* ---- TEXT COLORS ---- */
+  --text-primary: #000000;
+  --text-secondary: #666666;
+  --text-light: #999999;
+
+  /* ---- BUTTON & LINK COLORS ---- */
+  --btn-primary-bg: var(--primary-brand);
+  --btn-primary-text: #ffffff;
+  --btn-primary-border: var(--primary-brand);
+  --btn-hover-bg: #2d5a2e;              /* Darker shade of brand green */
+  --btn-hover-text: #ffffff;
+
+  /* ---- FORM COLORS ---- */
+  --form-input-bg: #ffffff;
+  --form-input-border: var(--color-border);
+  --form-input-focus: var(--primary-brand);
+  --form-placeholder: var(--text-light);
+
+  /* ---- STATUS COLORS ---- */
+  --status-success: #28a745;
+  --status-error: #dc3545;
+  --status-warning: #ffc107;
+  --status-info: #17a2b8;
+
+  /* ---- SHADOW & EFFECTS ---- */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 2px 8px rgba(0, 0, 0, 0.15);
+  --shadow-lg: 0 4px 12px rgba(0, 0, 0, 0.2);
+
+  /* ---- SPACING & SIZING ---- */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+
+  /* ---- TYPOGRAPHY ---- */
+  --font-family-base: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-family-display: 'Futura', sans-serif;
+  --font-size-base: 14px;
+  --font-size-lg: 16px;
+  --font-size-xl: 18px;
+  --line-height-base: 1.5;
+
+  /* ---- BORDER RADIUS ---- */
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px;
+  --border-radius-lg: 12px;
+
+  /* ---- TRANSITIONS ---- */
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.5s ease;
+}
+
+/* ============================================
+   DARK MODE (Optional - Uncomment to enable)
+   ============================================ */
+
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --bg-page: #1a1a1a;
+    --text-primary: #ffffff;
+    --text-secondary: #cccccc;
+    --color-gray-light: #333333;
+    --form-input-bg: #2a2a2a;
+    --form-input-border: #444444;
+  }
+} */
+
+/* ============================================
+   UTILITY CLASSES USING VARIABLES
+   ============================================ */
+
+.btn-primary {
+  background-color: var(--btn-primary-bg);
+  color: var(--btn-primary-text);
+  border-color: var(--btn-primary-border);
+  transition: var(--transition-normal);
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: var(--btn-hover-bg);
+  color: var(--btn-hover-text);
+}
+
+.card {
+  background-color: var(--bg-page);
+  border-color: var(--form-input-border);
+  box-shadow: var(--shadow-md);
+  border-radius: var(--border-radius-md);
+}
+
+.section {
+  background-color: var(--bg-section);
+  padding: var(--spacing-lg);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea,
+select {
+  background-color: var(--form-input-bg);
+  border: 1px solid var(--form-input-border);
+  color: var(--text-primary);
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--border-radius-sm);
+  transition: var(--transition-normal);
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-base);
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--form-input-focus);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(169, 211, 171, 0.1);
+}
+
+input::placeholder {
+  color: var(--form-placeholder);
+}
+
+/* ============================================
+   LEGACY COMPATIBILITY MAPPING
+   ============================================ */
+
+/* These classes map old hardcoded colors to variables */
+.color-brand {
+  color: var(--primary-brand);
+}
+
+.bg-brand {
+  background-color: var(--primary-brand);
+}
+
+.btn-brand {
+  background-color: var(--primary-brand);
+  border-color: var(--primary-brand);
+  color: var(--btn-primary-text);
+}
+
+.border-brand {
+  border-color: var(--primary-brand);
+}
+
+/* ============================================
+   RESPONSIVE ADJUSTMENTS
+   ============================================ */
+
+@media (max-width: 768px) {
+  :root {
+    --font-size-base: 13px;
+    --spacing-md: 12px;
+    --spacing-lg: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --font-size-base: 12px;
+    --spacing-md: 8px;
+    --spacing-lg: 14px;
+  }
+}

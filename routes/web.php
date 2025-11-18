@@ -13,7 +13,8 @@ use App\Http\Controllers\Frontend\{
     SigninController,
     AdminController,
     WishlistController,
-    PaymentController
+    PaymentController,
+    ProfileController
 };
 
 /*
@@ -39,6 +40,14 @@ Route::post('/signin', [SigninController::class, 'handleLogin'])->name('store.lo
 Route::get('/register', [SigninController::class, 'register'])->name('user.register');
 Route::post('/register', [SigninController::class, 'handleRegister'])->name('store.register');
 Route::post('/logout', [SigninController::class, 'logout'])->name('user.logout');
+
+// User Profile Routes (Protected)
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'show'])->name('user.profile');
+    Route::get('/profile/edit', [ProfileController::class, 'edit'])->name('user.edit-profile');
+    Route::post('/profile/update', [ProfileController::class, 'update'])->name('user.update-profile');
+    Route::get('/orders', [ProfileController::class, 'orders'])->name('user.orders');
+});
 
 // Admin Login and Dashboard
 Route::get('/admin', [AdminController::class, 'index']);

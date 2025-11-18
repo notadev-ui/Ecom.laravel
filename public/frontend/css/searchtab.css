@@ -105,7 +105,7 @@
     width: 14px;
     height: 14px;
     stroke: none;
-    fill: #ec688d!important
+    fill: #a9d3abff!important
 }
 
 .st-trending-box span.st-heading-text {
@@ -142,7 +142,7 @@
 }
 
 .st-trending-label svg.st-icon {
-    fill: #ec688d;
+    fill: #a9d3abff;f;
     height: 14px;
     width: 14px
 }
@@ -486,7 +486,7 @@ div#stResultEnds {
 
 .st-btn {
     display: inline-block;
-    border: 1px solid #ec688d;
+    border: 1px solid #a9d3abff;
     outline: 0;
     padding: 10px;
     margin: 0;
@@ -501,7 +501,7 @@ div#stResultEnds {
 }
 
 .scroll-top,.st-btn {
-    background-color: #ec688d;
+    background-color: #a9d3abff;
     color: #fff;
     text-align: center
 }
@@ -801,7 +801,7 @@ figure.st-product-media:before {
     justify-content: center;
     flex: 1;
     padding: 12px 0;
-    background-color: #ec688d;
+    background-color: #a9d3abff;
     color: #fff;
     font-family: inherit;
     font-size: 13px;
@@ -1168,7 +1168,7 @@ ul.st-selected-filters {
 
 li.st-select-li {
     position: relative;
-    background-color: #ec688d;
+    background-color: #a9d3abff;
     cursor: pointer;
     margin-bottom: 4px;
     border-radius: 35px
@@ -2245,7 +2245,7 @@ li.st-highlighted-filter span.filter-label {
     }
 
     .filter_h.st-active-filter {
-        background-color: #ec688d
+        background-color: #a9d3abff
     }
 
     .filter_h.st-active-filter span.disInBlock {
@@ -2396,8 +2396,8 @@ li.st-highlighted-filter span.filter-label {
         right: 0;
         bottom: 0;
         width: 100%;
-        box-shadow: 1px 1px #ec688d,-1px -1px #ec688d;
-        background-color: #ec688d;
+        box-shadow: 1px 1px #a9d3abff,-1px -1px #a9d3abff;
+        background-color: #a9d3abff;
         text-align: center;
         display: flex;
         align-items: center;

@@ -17,18 +17,18 @@
         }
 
         #shopify-section-header .h5 a {
-            color: #ec688d;
+            color: #a9d3abff;
         }
 
         #shopify-section-header .mobile-nav .appear-delay-2 a {
-            color: #ec688d;
+            color: #a9d3abff;
         }
 
         #shopify-section-header .mobile-nav .appear-delay-3 a {
             color: #9b006f;
         }
         .razorpay-payment-button {
-            background:#ec688d; color:black;
+            background:#a9d3abff; color:black;
         }
     </style>
     </div>
@@ -113,7 +113,7 @@
     </tbody>
 </table>
 <div class="d-flex justify-content-center mt-4 mb-4">
-    @if($order)
+    @auth
         @if($amount > 100)
             <div class="col-md-12">
             
@@ -137,7 +137,7 @@
                             @endforeach
                         </select>
                     </div>
-                    <input type="submit" class="btn mt-4" style="background:#ec688d; color:black;"></a>
+                    <input type="submit" class="btn mt-4" style="background:#a9d3abff; color:black;"></a>
                 </form>
             @endif
         
@@ -205,8 +205,8 @@
         </div>
         @endif
     @else
-        <a href="{{ route('user.login') }}" class="btn" style="background:#ec688d; color:black;">Login to Checkout</a>
-    @endif
+        <a href="{{ route('user.login') }}" class="btn" style="background:#a9d3abff; color:black;">Login to Checkout</a>
+    @endauth
 </div>
 
              </div>

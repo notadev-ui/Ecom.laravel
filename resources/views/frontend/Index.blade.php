@@ -43,7 +43,7 @@
   .block-title h2{
     text-transform: uppercase!important;
     font-size: .3125in;
-    color: #116315ff;
+    color: #a9d3abff;
     line-height: 1.2;
     font-weight: 500;
     text-align: center;
@@ -412,7 +412,7 @@ font-size: 24px;
             <p class="card-text truncate-description" style="margin-bottom:2px; color:black;">{{ $product->productDescription }}</p>
             <p class="card-text" style="margin-bottom:2px; height:38px; color:black; margin-top: 15px;"><b style="font-size:20px;">₹{{ $product->productPrice }}</b></p>
            <div class="text-center">
-                <a href="{{ route('product.view', $product->productId) }}" class="btn" > <button style="background: #ec688d; border: 2px solid #ec688d; color: white; width: 106px; font-size:12px; padding-bottom: 2px; padding-top: 2px;">SHOP NOW</button></a>
+                <a href="{{ route('product.view', $product->productId) }}" class="btn" > <button style="background: #a9d3abff; border: 2px solid #a9d3abff; color: white; width: 106px; font-size:12px; padding-bottom: 2px; padding-top: 2px;">SHOP NOW</button></a>
 
            </div>
         </div>
@@ -433,7 +433,7 @@ font-size: 24px;
         <div class="row">
             <div class="col-md-6 section-column">
                 <div class="intro-wrap"style="padding-top:38px!important;">
-                    <h2 style="color: #ec688d;">Why Choose Ecom24x7?</h2>
+                    <h2 style="color: #a9d3abff;">Why Choose Ecom24x7?</h2>
                     <h3 class="title"></h3>
                      <div class="text mb-4">Crafted with Care, Sourced with Integrity
 Improve Your Style Ethically with Ecom24x7's Handcrafted Jewelry</div>
@@ -476,7 +476,7 @@ Improve Your Style Ethically with Ecom24x7's Handcrafted Jewelry</div>
                         </div>
                     </div>
 <div class="text-center mt-3">
-        <a href="/about" class="btn" style="background:#ec688d!important; color:white;">LEARN MORE</a>
+        <a href="/about" class="btn" style="background:#a9d3abff!important; color:white;">LEARN MORE</a>
     </div>                </div>
             </div>
             <div class="col-md-6 section-column">
@@ -702,7 +702,7 @@ Improve Your Style Ethically with Ecom24x7's Handcrafted Jewelry</div>
 .faq-answer { color:#555; font-size:14px; line-height:1.6; padding-top:8px; }
 
 .faq-meta { margin-top:18px; display:flex; gap:12px; flex-wrap:wrap; align-items:center; color:#777; font-size:13px; }
-.faq-cta a { background:#ec688d; color:#fff; padding:8px 12px; border-radius:8px; text-decoration:none; font-size:13px; }
+.faq-cta a { background:#a9d3abff; color:#fff; padding:8px 12px; border-radius:8px; text-decoration:none; font-size:13px; }
 </style>
 
 <section class="faq-section" aria-labelledby="faq-heading">

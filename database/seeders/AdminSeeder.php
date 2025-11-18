@@ -17,7 +17,7 @@ class AdminSeeder extends Seeder
       DB::table('admin')->insert([
             'adminId' => 1,
             'adminUsername' => 'admin',
-            'adminPassword' => Hash::make('password'), // Replace 'password' with your desired password
+            'adminPassword' => Hash::make('password@123'), // Replace 'password' with your desired password
         ]);
     }
 }

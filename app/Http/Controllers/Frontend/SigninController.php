@@ -34,11 +34,10 @@ class SigninController extends Controller
 
         Auth::login($user);
 
-
- // Store user data in session
+        // Store user data in session
         session(['user' => $user]);
 
-        return redirect()->route('user.login')->with('success', 'Registration successful!');
+        return redirect()->route('user.profile')->with('success', 'Registration successful!');
     }
 
     // Handle login
@@ -110,7 +109,7 @@ public function handleLogin(Request $request)
         // Clear the session cart
         Session::forget('cart');
 
-        return redirect()->intended('/')->with('success', 'Login successful!');
+        return redirect()->route('user.profile')->with('success', 'Login successful!');
     }
 
     return back()->withErrors([

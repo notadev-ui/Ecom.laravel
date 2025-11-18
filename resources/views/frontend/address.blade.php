@@ -40,7 +40,7 @@
                             style= " background-color: #977935;border: 0px;"
                             id="new"
                     ></script>
-                    <input type="hidden" class="" style="background:#ec688d; color:black;" custom="Hidden Element" name="hidden">
+                    <input type="hidden" class="" style="background:#a9d3abff; color:black;" custom="Hidden Element" name="hidden">
                     <!--<button class="btn btn-sm btn-primary mt-3" style="background-color: #977935;border: 0px;">Select Address And  Checkout</button>-->
                 </form>
         

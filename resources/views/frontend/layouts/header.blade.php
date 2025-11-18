@@ -37,11 +37,7 @@
     <link rel="stylesheet" href="{{ asset('assets/dashboard/vendor/css/pages/page-auth.css') }}">
     
     
-     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- (Using Bootstrap 5 bundle at the end of the file) -->
 
     <!-- Helpers -->
     <script src="{{ asset('assets/dashboard/vendor/js/helpers.js') }}"></script>
@@ -77,14 +73,14 @@
                     </li>
                 </ul>
                 
-   <form class="d-flex" id="search-form">
-   <button type="button" id="search-previous" style="display: none;">Up Arrow</button>
-   <button type="button" id="search-next" style="display: none;">Down Arrow</button>
+    <form class="d-flex" id="search-controls">
+    <button type="button" id="search-previous" style="display: none;">Up Arrow</button>
+    <button type="button" id="search-next" style="display: none;">Down Arrow</button>
 </form>
 <p id="search-count"></p>
 <div id="search-results"></div>
 
-<form class="d-flex" id="search-form" action="{{ route('search') }}" method="GET">
+<form class="d-flex" id="search-form-desktop" action="{{ route('search') }}" method="GET">
     <!--@csrf-->
     <div class="input-group">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="search-input" name="query">
@@ -101,22 +97,45 @@
 <div class="product-container">
     <!-- Products will be dynamically added here -->
 </div>
-                <div class="header-item header-item--icons">
+                <div class="header-item header-item--icons ms-auto">
                     <div class="site-nav">
-                            <div class="site-nav__icons">
-                                <a class="site-nav__link site-nav__link--icon small--hide" href="{{ url('/signin') }}">
-                                    <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-user" viewBox="0 0 64 64">
-                                        <path d="M35 39.84v-2.53c3.3-1.91 6-6.66 6-11.41 0-7.63 0-13.82-9-13.82s-9 6.19-9 13.82c0 4.75 2.7 9.51 6 11.41v2.53c-10.18.85-18 6-18 12.16h42c0-6.19-7.82-11.31-18-12.16z" />
-                                    </svg>
-                                    <span class="icon__fallback-text">Log in</span>
-                                </a>
-<a class="site-nav__link site-nav__link--icon small--hide" href="{{ url('/wishlist') }}">
+                            <div class="site-nav__icons d-flex align-items-center gap-2">
+                                @auth
+                                    <div class="nav-item dropdown">
+                                        <a class="site-nav__link site-nav__link--icon d-flex align-items-center dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-user" viewBox="0 0 64 64">
+                                                <path d="M35 39.84v-2.53c3.3-1.91 6-6.66 6-11.41 0-7.63 0-13.82-9-13.82s-9 6.19-9 13.82c0 4.75 2.7 9.51 6 11.41v2.53c-10.18.85-18 6-18 12.16h42c0-6.19-7.82-11.31-18-12.16z" />
+                                            </svg>
+                                            <span class="icon__fallback-text">{{ Auth::user()->name }}</span>
+                                        </a>
+                                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                                            <li><a class="dropdown-item" href="{{ route('user.profile') }}">My Profile</a></li>
+                                            <li><a class="dropdown-item" href="{{ route('user.orders') }}">My Orders</a></li>
+                                            <li><hr class="dropdown-divider"></li>
+                                            <li>
+                                                <form method="POST" action="{{ route('user.logout') }}" style="display:inline;">
+                                                    @csrf
+                                                    <button class="dropdown-item" type="submit">Logout</button>
+                                                </form>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                @else
+                                    <a class="site-nav__link site-nav__link--icon d-flex align-items-center d-none d-lg-inline-block" href="{{ url('/signin') }}">
+                                        <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-user" viewBox="0 0 64 64">
+                                            <path d="M35 39.84v-2.53c3.3-1.91 6-6.66 6-11.41 0-7.63 0-13.82-9-13.82s-9 6.19-9 13.82c0 4.75 2.7 9.51 6 11.41v2.53c-10.18.85-18 6-18 12.16h42c0-6.19-7.82-11.31-18-12.16z" />
+                                        </svg>
+                                        <span class="icon__fallback-text">Log in</span>
+                                    </a>
+                                @endauth
+                                <!-- Desktop-only wishlist -->
+                                <a class="site-nav__link site-nav__link--icon d-flex align-items-center d-none d-lg-inline-block" href="{{ url('/wishlist') }}">
    <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-heart" viewBox="0 0 64 64">
             <path d="M32 58s-7.2-4.1-12-8.5C14.5 44.6 10 40.2 10 34.5 10 28 15 23 21.5 23c3.4 0 6.8 1.8 8.5 4.7C32.7 24.8 36.1 23 39.5 23 46 23 51 28 51 34.5c0 5.7-4.5 10.1-10 15C39.2 53.9 32 58 32 58z"/>
         </svg>
         <span class="icon__fallback-text">Wishlist</span>
 </a>
-                                <a href="{{ url('/cart') }}" class="site-nav__link site-nav__link--icon js-drawer-open-cart" aria-controls="CartDrawer" data-icon="cart">
+                                <a href="{{ url('/cart') }}" class="site-nav__link site-nav__link--icon d-flex align-items-center d-none d-lg-inline-block js-drawer-open-cart" aria-controls="CartDrawer" data-icon="cart">
                                     <span class="cart-link">
                                         <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-cart" viewBox="0 0 64 64">
                                             <path fill="none" d="M14 17.44h46.79l-7.94 25.61H20.96l-9.65-35.1H3" />
@@ -130,6 +149,13 @@
                             </div>
                         </div>
                 </div>
+
+                <!-- Mobile links (visible inside collapsed navbar) -->
+                <ul class="navbar-nav d-lg-none mt-2">
+                    <li class="nav-item"><a class="nav-link" href="{{ url('/signin') }}">Log in</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url('/wishlist') }}">Wishlist</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url('/cart') }}">Cart</a></li>
+                </ul>
    
            </div>
        </div>

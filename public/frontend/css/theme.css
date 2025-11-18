@@ -3,7 +3,7 @@
   http://archetypethemes.co
 */
 :root {
-    --colorBtnPrimary: #ec688d;
+    --colorBtnPrimary: #a9d3abff;
     --colorBtnPrimaryLight: #f295af;
     --colorBtnPrimaryDim: #e9517c;
     --colorBtnPrimaryText: #ffffff;
@@ -29,7 +29,7 @@
     --colorImageOverlayOpacity: 0;
     --colorImageOverlayTextShadow: .24;
     --colorSmallImageBg: #ffffff;
-    --colorLargeImageBg: #ec688d;
+    --colorLargeImageBg: #a9d3abff;
     --colorGridOverlay: #ffffff;
     --colorGridOverlayOpacity: .1;
     --colorDrawers: #ffffff;
@@ -37,7 +37,7 @@
     --colorDrawerBorder: #e8e8e1;
     --colorDrawerText: #000000;
     --colorDrawerTextDark: #000000;
-    --colorDrawerButton: #ec688d;
+    --colorDrawerButton: #a9d3abff;
     --colorDrawerButtonText: #ffffff;
     --grid-gutter: 17px
 }
@@ -301,7 +301,7 @@
     border: none;
     color: #fff;
     color: var(--colorBtnPrimaryText);
-    background: #ec688d;
+    background: #a9d3abff;
     background: var(--colorBtnPrimary);
     border-radius: 50%
 }
@@ -1672,7 +1672,7 @@ button[disabled],html input[disabled] {
     border-radius: var(--buttonRadius);
     color: #fff;
     color: var(--colorBtnPrimaryText);
-    background: #ec688d;
+    background: #a9d3abff;
     background: var(--colorBtnPrimary)
 }
 
@@ -1687,7 +1687,7 @@ button[disabled],html input[disabled] {
 .btn:hover,.product-reviews .spr-button:hover,.product-reviews .spr-summary-actions a:hover,.rte .btn:hover,.shopify-payment-button .shopify-payment-button__button--unbranded:hover {
     color: #fff;
     color: var(--colorBtnPrimaryText);
-    background-color: #ec688d;
+    background-color: #a9d3abff;
     background-color: var(--colorBtnPrimary)
 }
 
@@ -1772,7 +1772,7 @@ button[disabled],html input[disabled] {
 }
 
 [data-button_style=square] .btn:not(.btn--secondary):not(.btn--tertiary):not(.btn--inverse):not(.btn--body):not(.btn--static):active,[data-button_style=square] .product-reviews .spr-button:not(.btn--secondary):not(.btn--tertiary):not(.btn--inverse):not(.btn--body):not(.btn--static):active,[data-button_style=square] .product-reviews .spr-summary-actions a:not(.btn--secondary):not(.btn--tertiary):not(.btn--inverse):not(.btn--body):not(.btn--static):active,[data-button_style=square] .rte .btn:not(.btn--secondary):not(.btn--tertiary):not(.btn--inverse):not(.btn--body):not(.btn--static):active,[data-button_style=square] .shopify-payment-button .shopify-payment-button__button--unbranded:not(.btn--secondary):not(.btn--tertiary):not(.btn--inverse):not(.btn--body):not(.btn--static):active,[data-button_style^=round] .btn:not(.btn--secondary):not(.btn--tertiary):not(.btn--inverse):not(.btn--body):not(.btn--static):active,[data-button_style^=round] .product-reviews .spr-button:not(.btn--secondary):not(.btn--tertiary):not(.btn--inverse):not(.btn--body):not(.btn--static):active,[data-button_style^=round] .product-reviews .spr-summary-actions a:not(.btn--secondary):not(.btn--tertiary):not(.btn--inverse):not(.btn--body):not(.btn--static):active,[data-button_style^=round] .rte .btn:not(.btn--secondary):not(.btn--tertiary):not(.btn--inverse):not(.btn--body):not(.btn--static):active,[data-button_style^=round] .shopify-payment-button .shopify-payment-button__button--unbranded:not(.btn--secondary):not(.btn--tertiary):not(.btn--inverse):not(.btn--body):not(.btn--static):active {
-    background: #ec688d;
+    background: #a9d3abff;
     background: var(--colorBtnPrimary);
     transition-delay: 0s
 }
@@ -1780,7 +1780,7 @@ button[disabled],html input[disabled] {
 .shopify-payment-button .shopify-payment-button__button--unbranded:hover:not([disabled]) {
     color: #fff;
     color: var(--colorBtnPrimaryText);
-    background-color: #ec688d;
+    background-color: #a9d3abff;
     background-color: var(--colorBtnPrimary)
 }
 
@@ -1889,16 +1889,16 @@ button[disabled],html input[disabled] {
 .btn--tertiary-active {
     color: #fff;
     color: var(--colorBtnPrimaryText);
-    background: #ec688d;
+    background: #a9d3abff;
     background: var(--colorBtnPrimary);
-    border-color: #ec688d;
+    border-color: #a9d3abff;
     border-color: var(--colorBtnPrimary)
 }
 
 .btn--tertiary-active:hover {
     color: #fff;
     color: var(--colorBtnPrimaryText);
-    background: #ec688d;
+    background: #a9d3abff;
     background: var(--colorBtnPrimary)
 }
 
@@ -2717,7 +2717,7 @@ svg.icon:not(.icon--full-color) circle,svg.icon:not(.icon--full-color) ellipse,s
 }
 
 .drawer .btn {
-    background-color: #ec688d;
+    background-color: #a9d3abff;
     background-color: var(--colorDrawerButton);
     color: #fff;
     color: var(--colorDrawerButtonText)
@@ -3962,7 +3962,7 @@ form+.footer__social {
 .pagination .next,.pagination .prev {
     color: #fff;
     color: var(--colorBtnPrimaryText);
-    background: #ec688d;
+    background: #a9d3abff;
     background: var(--colorBtnPrimary);
     width: 43px;
     margin: 0 10px
@@ -6490,7 +6490,7 @@ input[type=image] {
     margin: 0;
     color: #fff;
     color: var(--colorBtnPrimaryText);
-    background-color: #ec688d;
+    background-color: #a9d3abff;
     background-color: var(--colorBtnPrimary);
     padding: 10px;
     z-index: 10000;
@@ -6528,7 +6528,7 @@ input[type=image] {
 .hero {
     position: relative;
     overflow: hidden;
-    background: #ec688d;
+    background: #a9d3abff;
     background: var(--colorLargeImageBg)
 }
 
@@ -7096,7 +7096,7 @@ input[type=image] {
     width: 100%;
     height: 250px;
     overflow: hidden;
-    background: #ec688d;
+    background: #a9d3abff;
     background: var(--colorLargeImageBg)
 }
 
@@ -7670,7 +7670,7 @@ html[dir=rtl] .grid-product__content {
     right: 0;
     line-height: 1;
     padding: 6px 5px 6px 7px;
-    background-color: #ec688d;
+    background-color: #a9d3abff;
     background-color: var(--colorBtnPrimary);
     color: #fff;
     color: var(--colorBtnPrimaryText);
@@ -7706,7 +7706,7 @@ html[dir=rtl] .grid-product__content {
     right: 10px;
     left: 10px;
     z-index: 2;
-    background-color: #ec688d;
+    background-color: #a9d3abff;
     background-color: var(--colorBtnPrimary);
     color: #fff;
     color: var(--colorBtnPrimaryText);
@@ -8335,7 +8335,7 @@ html[dir=rtl] .grid-product__content {
     position: absolute;
     width: 100%;
     overflow: hidden;
-    background: #ec688d;
+    background: #a9d3abff;
     background: var(--colorLargeImageBg);
     background-size: cover
 }
@@ -9564,7 +9564,7 @@ html[dir=rtl] .background-media-text__text {
 
 .type-product__label {
     padding: 4px 12px;
-    background-color: #ec688d;
+    background-color: #a9d3abff;
     background-color: var(--colorBtnPrimary);
     color: #fff;
     color: var(--colorBtnPrimaryText);
@@ -10953,7 +10953,7 @@ html[dir=rtl] .product-single__meta .rte {
 }
 
 a#Label-collections-sale-112,a#Label-collections-sale-113,a#Label-collections-sale-114 {
-    color: #ec688d!important
+    color: #a9d3abff!important
 }
 
 .grid-product__tag--sold-out {

@@ -291,7 +291,7 @@ window.RazorpayMagicBtnConfig = {
 dual: false,
 showIcon: true,
 showSubtext: true,
-bgColor: '#ec688d',
+bgColor: '#a9d3abff',
 title: '', // custom button text
 };
 
@@ -439,7 +439,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-PD5BR3H');
 </script>
 <!-- End Google Tag Manager -->
-<style> .section-header__title h1 {text-transform: uppercase;} .page-container h1 {color: #ec688d;} </style>
+<style> .section-header__title h1 {text-transform: uppercase;} .page-container h1 {color: #a9d3abff;} </style>
 <div id="shopify-block-10482958812443994587" class="shopify-block shopify-app-block"><script id="bikScript" type="text/javascript">
 (async function () {
 const response = await fetch(

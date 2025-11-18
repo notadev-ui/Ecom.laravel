@@ -16,11 +16,11 @@
         }
 
         #shopify-section-header .h5 a {
-            color: #ec688d;
+            color: #a9d3abff;
         }
 
         #shopify-section-header .mobile-nav .appear-delay-2 a {
-            color: #ec688d;
+            color: #a9d3abff;
         }
 
         #shopify-section-header .mobile-nav .appear-delay-3 a {
@@ -89,7 +89,7 @@
                                     </div><label for="ContactFormMessage-page-contact-template-0">Message</label>
                                     <textarea rows="5" id="ContactFormMessage-page-contact-template-0" class="input-full" name="contact[body]"></textarea>
 
-                                    <button type="submit" class="btn" style="background:#ec688d;">
+                                    <button type="submit" class="btn" style="background:#a9d3abff;">
                                         Submit
                                     </button>
 
