@@ -30,7 +30,7 @@ cd c:\xampp\htdocs\Ecom.laravel
 git init
 git add .
 git commit -m "Deploy: Ecom24x7 to Railway"
-git remote add origin https://github.com/YOUR_USERNAME/Ecom.laravel.git
+git remote add origin https://github.com/notadev.ui/Ecom.laravel.git
 git push -u origin main
 ```
 
