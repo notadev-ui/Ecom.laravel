@@ -1,0 +1,12 @@
+node_modules/
+npm-debug.log
+.env.local
+.env.*.local
+storage/
+bootstrap/cache/
+.git/
+.gitignore
+tests/
+.phpunit.result.cache
+vendor/
+composer.lock

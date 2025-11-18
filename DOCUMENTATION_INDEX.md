@@ -39,6 +39,21 @@ Welcome to the Ecom24x7 project documentation! This index helps you find the rig
 - Testing guidelines
 - Security practices
 
+### Deploy to Production (Railway)
+👉 **[RAILWAY_QUICK_START.md](RAILWAY_QUICK_START.md)** (200+ lines)
+- 10-step deployment guide
+- Pre-deployment checklist
+- Configuration reference
+- Troubleshooting guide
+- Post-deployment tasks
+
+👉 **[RAILWAY_DEPLOYMENT.md](RAILWAY_DEPLOYMENT.md)** (350+ lines)
+- Complete deployment guide
+- Step-by-step instructions
+- Database configuration
+- File storage setup
+- Monitoring & scaling
+
 ### See What's Been Done
 👉 **[PROJECT_ORGANIZATION.md](PROJECT_ORGANIZATION.md)**
 - Summary of improvements
@@ -68,9 +83,10 @@ Welcome to the Ecom24x7 project documentation! This index helps you find the rig
 3. Test: php artisan tinker
 
 #### ... deploy to production
-1. Read: README_MAIN.md (Deployment section)
-2. Follow: Deployment Checklist
-3. Run: Deployment Steps
+1. Read: RAILWAY_QUICK_START.md (10-step guide)
+2. Follow: RAILWAY_DEPLOYMENT.md (detailed instructions)
+3. Use: .env.railway.example (for variables)
+4. Reference: Procfile, .railwayignore (config files)
 
 #### ... run tests
 1. Read: DEVELOPMENT_GUIDELINES.md (Testing section)
@@ -142,9 +158,11 @@ Welcome to the Ecom24x7 project documentation! This index helps you find the rig
 | PROJECT_STRUCTURE.md | 265 | Architecture, models, controllers | Understanding structure |
 | DEVELOPMENT_GUIDELINES.md | 450+ | Code standards, patterns, best practices | Development |
 | QUICK_REFERENCE.md | 300+ | Commands, locations, debugging | Daily development |
+| RAILWAY_QUICK_START.md | 200+ | 10-step deploy, checklist | Quick deployment |
+| RAILWAY_DEPLOYMENT.md | 350+ | Detailed setup, config, monitoring | Complete deployment guide |
 | PROJECT_ORGANIZATION.md | - | Summary, statistics, highlights | Overview & planning |
 
-**Total**: 1,500+ lines of documentation
+**Total**: 1,500+ lines of documentation + 2,000+ lines of deployment guides
 
 ---
 
